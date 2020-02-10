@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TP1</string>
+    <string name="numPermis">T5476-300396-05</string>
+    <string name="nom">Tremblay</string>
+    <string name="prenom">Jean-Simon</string>
+    <string name="dateDeNaissance">1997-07-31</string>
+    <string name="adresse">69 RUE BIG HAMMER MONTREAL (QC) H2X-3P8</string>
+    <string name="sexe">M</string>
+    <string name="classe">5</string>
+    <string name="validation">2014-10-01</string>
+    <string name="expiration">2022-12-17</string>
+    <string name="fin">Paiement exigé chaque année à votre date anniversaire de naissance</string>
+</resources>
