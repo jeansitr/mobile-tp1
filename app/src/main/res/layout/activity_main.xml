@@ -5,449 +5,507 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        ></ScrollView>
-    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="16dp"
-        android:orientation="horizontal"
-        android:background="@drawable/backgroung_driver_license">
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="35"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/quebecLogo"
+            <LinearLayout
+                android:id="@+id/cardContainer"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="15"
-                android:src="@drawable/quebec_vector_logo"
-                android:scaleType="fitXY"/>
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="68"
-                android:src="@drawable/moi"
-                android:scaleType="fitXY"/>
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="17"
-                android:src="@drawable/signature"
-                android:scaleType="fitXY"/>
-        </LinearLayout>
-
-        <TableLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="65"
-            android:stretchColumns="*">
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:text="Permis de conduire"
+                <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="360dp"
                     android:layout_marginLeft="20dp"
-                    android:textColor="#000000"
-                    android:textStyle="bold|italic"
-                    android:textScaleX="1.31"
-                    android:textSize="25dp">
-                </TextView>
-            </TableRow>
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="35"
+                    android:orientation="vertical">
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/quebecLogo"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="15"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/quebec_vector_logo" />
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="68"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/moi" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="17"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/signature" />
+                </LinearLayout>
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_height="360dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="65"
+                    android:stretchColumns="*">
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Permis de conduire"
+                            android:textColor="#000000"
+                            android:textScaleX="1.31"
+                            android:textSize="25dp"
+                            android:textStyle="bold|italic"></TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/noPermis"
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="@string/numPermis"
+                            android:textColor="#000000"
+                            android:textScaleX="1.31"
+                            android:textSize="35dp"
+                            android:textStyle="bold"></TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/nom"
+                            android:layout_width="205dp"
+                            android:layout_marginLeft="20dp"
+                            android:text="@string/nom"
+                            android:textColor="#000000"
+                            android:textScaleX="1.31"
+                            android:textSize="15dp"
+                            android:textStyle="bold"></TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/prenom"
+                            android:layout_width="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="@string/prenom"
+                            android:textColor="#000000"
+                            android:textScaleX="1.31"
+                            android:textSize="15dp"
+                            android:textStyle="bold"></TextView>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/dateDeNaissanceLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="Date de naissance (A-M-J) :"
+                                android:textColor="#156bd8"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/dateDeNaissance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/dateDeNaissanceLabel"
+                                android:text="@string/dateDeNaissance"
+                                android:textColor="#000000"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"
+                                android:textStyle="bold"></TextView>
+                        </RelativeLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/adresse"
+                                android:layout_width="260dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="@string/adresse"
+                                android:textColor="#000000"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"
+                                android:textStyle="bold">
+
+                            </TextView>
+                        </RelativeLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/sexeLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="294dp"
+                                android:text="Sexe : "
+                                android:textColor="#156bd8"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/sexe"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/sexeLabel"
+                                android:text="@string/sexe"
+                                android:textColor="#000000"
+                                android:textScaleX="1"
+                                android:textSize="15dp"
+                                android:textStyle="bold"></TextView>
+                        </RelativeLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/classeLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="Classe(s) :"
+                                android:textColor="#156bd8"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/classe"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/classeLabel"
+                                android:text="@string/classe"
+                                android:textColor="#000000"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"
+                                android:textStyle="bold"></TextView>
+                        </RelativeLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/conditionLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="cond. :"
+                                android:textColor="#156bd8"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/condition"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/conditionLabel"
+                                android:text=" Aucune"
+                                android:textColor="#000000"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:id="@+id/tailleLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="294dp"
+                                android:text="Taille (cm) :"
+                                android:textColor="#156bd8"
+                                android:textScaleX="1.3"
+                                android:textSize="15dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/taille"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/tailleLabel"
+                                android:text=" 210"
+                                android:textColor="#000000"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"
+                                android:textStyle="bold"></TextView>
+                        </RelativeLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/mentionLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="Mention(s) :"
+                                android:textColor="#156bd8"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/mention"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/mentionLabel"
+                                android:text=" Aucune"
+                                android:textColor="#000000"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:id="@+id/yeuxLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="295dp"
+                                android:text="Yeux :"
+                                android:textColor="#156bd8"
+                                android:textScaleX="1.3"
+                                android:textSize="15dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/yeux"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/yeuxLabel"
+                                android:text=" Brun"
+                                android:textColor="#000000"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"
+                                android:textStyle="bold"></TextView>
+                        </RelativeLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/referenceLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="N° de références :"
+                                android:textColor="#156bd8"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/reference"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/referenceLabel"
+                                android:text="A W C Q 3 5 B 5 2"
+                                android:textColor="#000000"
+                                android:textScaleX="1.40"
+                                android:textSize="15dp"
+                                android:textStyle="bold"></TextView>
+                        </RelativeLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/valideLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="Valide le : "
+                                android:textColor="#156bd8"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/valide"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/valideLabel"
+                                android:text="@string/validation"
+                                android:textColor="#000000"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:id="@+id/expireLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="262dp"
+                                android:text="Expire le : "
+                                android:textColor="#156bd8"
+                                android:textScaleX="1.4"
+                                android:textSize="15dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/expire"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/expireLabel"
+                                android:text="@string/expiration"
+                                android:textColor="#000000"
+                                android:textScaleX="1.31"
+                                android:textSize="15dp"
+                                android:textStyle="bold"></TextView>
+                        </RelativeLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="@string/fin"
+                                android:textColor="#000000"
+                                android:textScaleX="1.53"
+                                android:textSize="16dp"
+                                android:textStyle="bold"></TextView>
+                        </RelativeLayout>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
                 <TextView
-                    android:id="@+id/noPermis"
+                    android:id="@+id/prenomEditLbl"
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/numPermis"
+                    android:layout_height="wrap_content"
+                    android:text="Prenom:"
                     android:textColor="#000000"
                     android:textScaleX="1.31"
-                    android:textSize="35dp"
-                    android:textStyle="bold">
-                </TextView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/nom"
-                    android:layout_width="205dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/nom"
+                    android:textSize="25dp"
+                    android:textStyle="bold"></TextView>
+                <EditText
+                    android:id="@+id/prenomEditTxt"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
                     android:textColor="#000000"
                     android:textScaleX="1.31"
                     android:textSize="15dp"
-                    android:textStyle="bold">
-                </TextView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@id/prenomEditLbl">
+                </EditText>
                 <TextView
-                    android:id="@+id/prenom"
+                    android:id="@+id/nomEditLbl"
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/prenom"
+                    android:layout_height="wrap_content"
+                    android:text="Nom:"
                     android:textColor="#000000"
-                    android:textSize="15dp"
                     android:textScaleX="1.31"
-                    android:textStyle="bold">
-                </TextView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/dateDeNaissanceLabel"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Date de naissance (A-M-J) :"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#156bd8"
-                        android:textScaleX="1.31"
-                        android:textSize="15dp">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/dateDeNaissance"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/dateDeNaissance"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textScaleX="1.31"
-                        android:layout_toRightOf="@id/dateDeNaissanceLabel"
-                        android:textStyle="bold">
-                    </TextView>
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <RelativeLayout>
-                    <TextView
-                        android:id="@+id/adresse"
-                        android:layout_width="260dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/adresse"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:layout_marginLeft="20dp"
-                        android:textScaleX="1.31"
-                        android:textStyle="bold">
-
-                    </TextView>
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <RelativeLayout
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@id/prenomEditTxt"></TextView>
+                <EditText
+                    android:id="@+id/nomEditTxt"
+                    android:layout_width="290dp"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                    <TextView
-                        android:id="@+id/sexeLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="294dp"
-                        android:textColor="#156bd8"
-                        android:textScaleX="1.31"
-                        android:textSize="15dp"
-                        android:text="Sexe : ">
-                    </TextView>
+                    android:textColor="#000000"
+                    android:textScaleX="1.31"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@id/nomEditLbl">
+                </EditText>
 
-                    <TextView
-                        android:id="@+id/sexe"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/sexe"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textScaleX="1"
-                        android:layout_toRightOf="@id/sexeLabel"
-                        android:textStyle="bold">
-                    </TextView>
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <RelativeLayout
+                <Button
+                    android:id="@+id/updateBtn"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                    <TextView
-                        android:id="@+id/classeLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#156bd8"
-                        android:textScaleX="1.31"
-                        android:textSize="15dp"
-                        android:text="Classe(s) :">
-                    </TextView>
+                    android:layout_below="@id/nomEditTxt"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="-2dp"
+                    android:layout_marginEnd="0dp"
+                    android:text="Update"
+                    android:textSize="25dp"
+                    android:textStyle="bold"></Button>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 
-                    <TextView
-                        android:id="@+id/classe"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/classe"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textScaleX="1.31"
-                        android:layout_toRightOf="@id/classeLabel"
-                        android:textStyle="bold">
-                    </TextView>
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <RelativeLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                    <TextView
-                        android:id="@+id/conditionLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#156bd8"
-                        android:textScaleX="1.31"
-                        android:textSize="15dp"
-                        android:text="cond. :">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/condition"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text=" Aucune"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textScaleX="1.31"
-                        android:layout_toRightOf="@id/conditionLabel"
-                        android:textStyle="bold">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/tailleLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="294dp"
-                        android:textColor="#156bd8"
-                        android:textScaleX="1.3"
-                        android:textSize="15dp"
-                        android:text="Taille (cm) :">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/taille"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text=" 210"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textScaleX="1.31"
-                        android:layout_toRightOf="@id/tailleLabel"
-                        android:textStyle="bold">
-                    </TextView>
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <RelativeLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                    <TextView
-                        android:id="@+id/mentionLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#156bd8"
-                        android:textScaleX="1.31"
-                        android:textSize="15dp"
-                        android:text="Mention(s) :">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/mention"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text=" Aucune"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textScaleX="1.31"
-                        android:layout_toRightOf="@id/mentionLabel"
-                        android:textStyle="bold">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/yeuxLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="295dp"
-                        android:textColor="#156bd8"
-                        android:textScaleX="1.3"
-                        android:textSize="15dp"
-                        android:text="Yeux :">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/yeux"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text=" Brun"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textScaleX="1.31"
-                        android:layout_toRightOf="@id/yeuxLabel"
-                        android:textStyle="bold">
-                    </TextView>
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                    <TextView
-                        android:id="@+id/referenceLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#156bd8"
-                        android:textScaleX="1.31"
-                        android:textSize="15dp"
-                        android:text="N° de références :">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/reference"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="A W C Q 3 5 B 5 2"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textScaleX="1.40"
-                        android:layout_toRightOf="@id/referenceLabel"
-                        android:textStyle="bold">
-                    </TextView>
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <RelativeLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-                    <TextView
-                        android:id="@+id/valideLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="#156bd8"
-                        android:textScaleX="1.31"
-                        android:textSize="15dp"
-                        android:text="Valide le : ">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/valide"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/validation"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textScaleX="1.31"
-                        android:layout_toRightOf="@id/valideLabel"
-                        android:textStyle="bold">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/expireLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="262dp"
-                        android:textColor="#156bd8"
-                        android:textScaleX="1.4"
-                        android:textSize="15dp"
-                        android:text="Expire le : ">
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/expire"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/expiration"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textScaleX="1.31"
-                        android:layout_toRightOf="@id/expireLabel"
-                        android:textStyle="bold">
-                    </TextView>
-                </RelativeLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
-
-                    <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="@string/fin"
-                        android:textColor="#000000"
-                        android:layout_marginLeft="20dp"
-                        android:textSize="16dp"
-                        android:textScaleX="1.53"
-                        android:textStyle="bold">
-                    </TextView>
-                </RelativeLayout>
-            </TableRow>
-        </TableLayout>
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
