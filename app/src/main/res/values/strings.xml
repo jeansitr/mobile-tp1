@@ -10,4 +10,10 @@
     <string name="validation">2014-10-01</string>
     <string name="expiration">2022-12-17</string>
     <string name="fin">Paiement exigé chaque année à votre date anniversaire de naissance</string>
-</resources>
+    <string name="lblNom">Nom</string>
+    <string name="lblPrenom">Prenom</string>
+    <string name="signatureCheckBox">Afficher signature</string>
+    <string name="switchGenre">Choix entre homme et femme</string>
+    <string name="titre">Permis de conduire</string>
+    <string name="toast">Ceci est un Toast personnalisée</string>
+    </resources>

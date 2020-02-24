@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">TP1</string>
+    <string name="numPermis">T5476-300396-05</string>
+    <string name="nom">Tremblay</string>
+    <string name="prenom">Jean-Simon</string>
+    <string name="dateDeNaissance">1997-07-31</string>
+    <string name="adresse">69 RUE GROS MARTEAU MONTREAL (QC) H2X-3P8</string>
+    <string name="sexe">H</string>
+    <string name="classe">5</string>
+    <string name="validation">2014-10-01</string>
+    <string name="expiration">2022-12-17</string>
+    <string name="fin">Paiement exigé chaque année à votre date anniversaire de naissance</string>
+    <string name="lblNom">Nom</string>
+    <string name="lblPrenom">Prenom</string>
+    <string name="signatureCheckBox">Afficher signature</string>
+    <string name="switchGenre">Choix entre homme et femme</string>
+    <string name="titre">Permis de conduire</string>
+    <string name="toast">Ceci est un Toast personnalisée</string>
+</resources>

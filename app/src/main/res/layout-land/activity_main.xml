@@ -72,7 +72,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
-                            android:text="Permis de conduire"
+                            android:text="@string/titre"
                             android:textColor="#000000"
                             android:textScaleX="1.31"
                             android:textSize="25dp"
@@ -453,7 +453,7 @@
                     android:id="@+id/prenomEditLbl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Prenom:"
+                    android:text="@string/lblPrenom"
                     android:textColor="#000000"
                     android:textScaleX="1.31"
                     android:textSize="25dp"
@@ -472,7 +472,7 @@
                     android:id="@+id/nomEditLbl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nom:"
+                    android:text="@string/lblNom"
                     android:textColor="#000000"
                     android:textScaleX="1.31"
                     android:textSize="25dp"
@@ -493,7 +493,7 @@
                     android:id="@+id/signatureCheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Afficher Signature"
+                    android:text="@string/signatureCheckBox"
                     android:checked="true"
                     android:layout_below="@id/nomEditLbl"
                     android:layout_marginLeft="-22px"/>
@@ -505,8 +505,8 @@
                     android:layout_below="@id/signatureCheckBox"
                     android:checked="true"
                     android:showText="true"
-                    android:text="Choix entre Homme et Femme: "
-                    android:textOn="H"
+                    android:text="@string/switchGenre"
+                    android:textOn="@string/sexe"
                     android:textOff="F" />
 
                 <Button
