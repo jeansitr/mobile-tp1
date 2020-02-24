@@ -1,15 +1,26 @@
 package dim.uqac.jean_simon.TP1;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.GradientDrawable;
+import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.net.Uri;
+import android.app.Notification;
 import android.webkit.ServiceWorkerClient;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -24,6 +35,12 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
+    private NotificationManager nm;
+    private int count;
+    private static String CHANNEL_ID = "id_257";
+    private static String CHANNEL_NAME = "channel_257";
+    private static String CHANNEL_DESCRIPTION = "description_257";
+    private static int NOTIFICATION_ID = 1111;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +106,41 @@ public class MainActivity extends AppCompatActivity {
                     ShowToast();
                 }
             });
+
+            Button button2 = (Button)findViewById(R.id.button2);
+            button2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    creerNotification(view);
+                }
+            });
+
+            Button button3 = (Button)findViewById(R.id.button3);
+            button3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Uri webpage = Uri.parse("https://www.google.ca");
+                    Intent webItent = new Intent(Intent.ACTION_VIEW, webpage);
+                    startActivity(webItent);
+                }
+            });
+
+            Button button4 = (Button)findViewById(R.id.button4);
+            button4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                    intent.putExtra("extra_message", "Bienvenue dans l'activitée #2 !!");
+                    startActivityForResult(intent, 2);
+                }
+            });
         }
+
+        int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, importance);
+        channel.setDescription(CHANNEL_DESCRIPTION);
+        nm = getSystemService(NotificationManager.class);
+        nm.createNotificationChannel(channel);
     }
 
     @Override
@@ -198,5 +249,60 @@ public class MainActivity extends AppCompatActivity {
         toast.setView(layout);
 
         toast.show();
+    }
+
+    public void creerNotification(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        Intent broadcastIntent = new Intent(this, NotificationReceiver.class);
+        PendingIntent actionIntent = PendingIntent.getBroadcast(this, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Notification n = new Notification.Builder(this, CHANNEL_ID)
+                .setContentTitle("Message - TP1 INF257")
+                .setContentText("Voici une belle notification :)")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentIntent(pIntent)
+                .setNumber(count++)
+                .setAutoCancel(true)
+                .setOngoing(true)
+                .setFullScreenIntent(pIntent, true)
+                .setStyle(new Notification.BigTextStyle().bigText("IMPORTANT"))
+                .setTicker("Hey! Je suis le TP1 :D")
+                .addAction(R.mipmap.ic_launcher, "Toast!", actionIntent)
+                .build();
+
+        nm.notify(NOTIFICATION_ID, n);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menuItem1:
+            {
+                Log.i("DIM", "Menu item 1 clicked");
+                return true;
+            }
+            case R.id.menuItem2:
+            {
+                Log.i("DIM", "Menu item 2 clicked");
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(resultCode == RESULT_OK){
+            CharSequence response = data.getCharSequenceExtra("extra_message");
+            Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
+        }
     }
 }

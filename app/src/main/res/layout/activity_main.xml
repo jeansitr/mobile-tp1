@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
+        style="@style/carte.section1"
         android:id="@+id/cardContainer"
         android:layout_width="match_parent"
         android:layout_height="220dp"
@@ -29,10 +30,7 @@
                 android:src="@drawable/quebec_vector_logo" />
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="68"
-                android:scaleType="fitXY"
+                style="@style/carte.section1.image"
                 android:src="@drawable/moi" />
 
             <ImageView
